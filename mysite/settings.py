@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://final4railway-production-7e1c.up.railway.app']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -140,5 +142,3 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'portafolio/static/'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-CSRF_TRUSTED_ORIGINS = ['https://final4railway-production-7e1c.up.railway.app']
