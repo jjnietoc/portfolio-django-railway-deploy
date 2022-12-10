@@ -1,0 +1,245 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block content %}
+
+<!-- ==========================
+        HEADER SECTION 
+        =========================== -->
+<header id="home">
+  <!-- Header Image -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <!-- Slider Button (don't edit!)-->
+      <div class="row">
+        <div class="col-md-12 text-right navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="index.html#"
+            ><span></span
+          ></a>
+        </div>
+      </div>
+      <!-- HEADER HEADLINE -->
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1 inner">
+          <h1 class="animated fadeInDown">
+            <span style="color: #e04343">Ti</span>ny<br />
+            <span><span style="color: #ffe800">Port</span>folio</span>
+          </h1>
+          <!-- Title -->
+          <h3 class="animated fadeInUp delay-05s"><span class="rotate">Guarda,Mira,Muestra</span></h3>
+          <!-- Text Rotator -->
+        </div>
+      </div>
+      <!-- Learn More Button -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          
+            <p>VER MAS</p>
+            <p class="scrollto--arrow">
+              <img src='{% static "img/scroll-down.png" %}' alt="scroll down arrow" />
+            </p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Header Image End -->
+</header>
+<!-- ==========================
+        HEADER SECTION END  
+        =========================== -->
+
+<!-- ==========================
+        ABOUT SECTION  
+        =========================== -->
+<section class="intro text-center section-padding color-bg" id="about">
+  <div class="container">
+    <!-- WELCOME TEXT -->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 wp1">
+        <h1 class="arrow">Agregar <span>un</span> proyecto</h1>
+        <!-- Headline -->
+        <!-- about / welcome text -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================
+        FORM SECTION
+        =========================== -->
+<section class="text-center section-padding contact-wrap" id="contact">
+  <div class="container">
+    <!-- Headline -->
+
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="col-md-12 contact">
+        <form method="POST" enctype= multipart/form-data role="form" action="portafolio_import">
+          {% csrf_token %}
+          <!-- Name -->
+          <div class="row">
+            <div class="col-md-12">
+              <!-- E-Mail -->
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Titulo"
+                  name="title"
+                />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <!-- URL -->
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="URL"
+                  name="url"
+                />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <!-- Tags -->
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Tags"
+                  name="tags"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Message Area -->
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              placeholder="Escribe tu descripcion aqui..."
+              style="height: 232px"
+              name="description"
+            ></textarea>
+          </div>
+
+            <!-- Photo -->
+            <div class="form-group">
+              <input
+                type="file"
+                class="form-control"
+                placeholder="Foto"
+                name="photo"
+              />
+            </div>
+
+          <!-- Subtmit Button -->
+          <button type="submit" class="btn btn-send">Submit</button>
+        </form>
+      </div>
+    </div>
+    <br />
+  </div>
+</section>
+<!-- ==========================
+        FORM SECTION END
+        =========================== -->
+
+
+<!-- ==========================
+        TABLE SECTION
+        =========================== -->
+
+
+
+<section>
+  <div class="row">
+        <table class="table table-light table-bordered table-striped">
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Tags</td>
+                <td>URL</td>
+                <td>Picture</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for p in portfolio %} 
+        <tr>
+            <td>{{ p.title }}</td>
+            <td>{{ p.description }}</td>
+            <td>{{ p.tags }}</td>
+            <td>{{ p.url }}</td>
+            <td><img src="{{ p.photo.url }}" height="100" width="100"></td>
+        </tr>
+        {% endfor %} 
+        </tbody>
+  </div>
+</section>
+
+
+
+<!-- ==========================
+        TABLE SECTION END
+        =========================== -->
+
+<section class="intro text-center section-padding color-bg" id="about">
+  <div class="container">
+    <!-- WELCOME TEXT -->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 wp1">
+        <h1 class="arrow">Mira <span>tus</span> proyectos</h1>
+        <!-- Headline -->
+        <!-- about / welcome text -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- SmoothScroll -->
+<script
+  type="text/javascript"
+  src='{% static "assets/smoothscroll/smoothscroll.js" %}'
+></script>
+<!-- Bootstrap -->
+<script src='{% static "assets/bootstrap/js/bootstrap.min.js" %}'></script>
+<!-- Waypoints -->
+<script src='{% static "js/waypoints.min.js" %}'></script>
+<!-- classie.js -->
+<script src='{% static "js/classie.js" %}'></script>
+<!-- FlexSlider -->
+<script src='{% static "assets/flexslider/jquery.flexslider.js" %}'></script>
+<!-- Modernizr -->
+<script src='{% static "js/modernizr.js" %}'></script>
+<!-- Text Rotator -->
+<script src='{% static "assets/textrotator/jquery.simple-text-rotator.js" %}'></script>
+<!-- Lightbox.js -->
+<script src='{% static "assets/lightbox/js/lightbox.min.js" %}'></script>
+<!-- Google Maps -->
+<script
+  type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"
+></script>
+<!-- Theme JavaScript Core -->
+<script src='{% static "js/main.js" %}'></script>
+<script src='{% static "js/script.js" %}'></script>
+
+<!-- GOOGLE MAPS DATA -->
+
+
+<!-- TEXT ROTATOR SETTINGS -->
+<script type="text/javascript">
+  $(".rotate").textrotator({
+    animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+    separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+    speed: 2000, // How many milliseconds until the next word show.
+  });
+</script>
+
+{% endblock content %}
