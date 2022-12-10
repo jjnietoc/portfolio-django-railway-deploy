@@ -76,14 +76,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'final4',
-        'PORT': '3306',
-        'HOST': 'localhost',
+        'NAME': 'railway',
+        'PORT': '6298',
+        'HOST': 'containers-us-west-167.railway.app',
         'USER': 'root',
-        'PASSWORD': 'macanudo1',
+        'PASSWORD': 'Eeay1ilqSwc2eJ0pWQKo',
          'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
          }
