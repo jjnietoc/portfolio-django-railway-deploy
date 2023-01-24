@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o$o5nem1!q6y!gz5auf7^z48m-kq2p5az0j8-8w@yn5s@6x+k-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://tinyportfolio-u4.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://final4railway-production-7e1c.up.railway.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
