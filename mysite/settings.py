@@ -146,4 +146,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
+LOGIN_REDIRECT_URL = 'https://final4railway-production-7e1c.up.railway.app/portafolio/'
