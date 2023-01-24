@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://final4railway-production-7e1c.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['tinyportfolio-u4.up.railway.app']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
