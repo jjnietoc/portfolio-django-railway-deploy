@@ -21,7 +21,7 @@ class RegisterView(CreateView):
       form.save()
       return redirect('login')
 
-@login_required(login_url='/user/')
+@login_required
 def portfolio(request):
     portfolio = Portfolio.objects.all()
     form = PortfolioForm()
@@ -37,7 +37,7 @@ def portfolio(request):
         get_ip.save()
     return render(request, 'portafolio.html', context)
 
-@login_required(login_url='/user/')
+@login_required
 def portafolio_import(request):
     portfolio = Portfolio.objects.all()
     context = {'portfolio': portfolio}
